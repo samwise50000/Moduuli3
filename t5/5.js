@@ -1,4 +1,3 @@
-'use strict';
 const picArray = [
   {
     title: 'Title 1',
@@ -92,4 +91,24 @@ const picArray = [
   },
 ];
 
-// add your code here
+let list = document.getElementById('pictures');
+
+for(let i = 0; i< 9; i++){
+  let article = document.createElement('article')
+  let article_title = document.createElement('h2')
+  let article_caption = document.createElement("figcaption")
+  let article_pic = document.createElement('img')
+  let article_description = document.createElement('p')
+  let article_figure = document.createElement('figure')
+  article_caption.innerText = picArray[i]['caption']
+  article_title.innerText = picArray[i]['title']
+  article_pic.src = picArray[i]['image']['medium']
+  article_pic.alt = 'title_from_Array'
+  article_description.innerText = picArray[i]['description']
+  article_figure.appendChild(article_pic)
+  article_figure.appendChild(article_caption)
+  article.appendChild(article_title)
+  article.appendChild(article_figure)
+  article.appendChild(article_description)
+  list.appendChild(article)
+}

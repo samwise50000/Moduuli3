@@ -5,6 +5,7 @@ Based on the drop-down list, calculator performs addition, subtraction, multipli
 Use the value attribute of <option> elements to decide which operation the calculator needs to do. Example.
 Show the result in <p id="result"> when the button is clicked.
 */
+'use strict';
 
 function calc(){
     let x = document.getElementById("operation").value;
