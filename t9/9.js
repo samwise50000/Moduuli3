@@ -8,32 +8,16 @@ Example inputs: 3+5, 2-78, 3/6, etc..
 */
 'use strict';
 
-function calc(){
+function calculate(){
     let x = document.getElementById("calculation").value;
-    let array_of_numbers =
+    let num_array = x.split("")
+    let calculation = ''
 
-if (x.includes('+')) {
-    let calculation = parseInt(number1) + parseInt(number2)
-    document.getElementById("result").innerHTML = calculation;
+num_array.forEach((i) => calculation += i);
+    let result = Function('return ' + calculation)();
+    document.getElementById("result").innerHTML = result;
 }
 
-else if (x.includes('-')) {
-    let calculation = parseInt(number1) - parseInt(number2)
-    document.getElementById("result").innerHTML = calculation;
-}
-
-else if (x.includes('*')) {
-    let calculation = parseInt(number1) * parseInt(number2)
-    document.getElementById("result").innerHTML = calculation;
-}
-
-else if (x.includes('/')) {
-    let calculation = parseInt(number1) / parseInt(number2)
-    document.getElementById("result").innerHTML = calculation;
-}
-
-}
 
 const button = document.querySelector('button');
-
-button.onclick = calc;
+button.onclick = calculate;
